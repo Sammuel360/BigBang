@@ -11,12 +11,12 @@ class Usuario
     }
     public function logar() 
     {
-        return "tema/admin/logar.php";
+        return "app/views//logar.php";
     }
     public function main()
     {
         if (isset($_SESSION['usuario'])) {
-            return "tema/admin/tela1.php";
+            return "app/views/tela1.php";
         }
 
         return $this->logar();
@@ -24,7 +24,7 @@ class Usuario
 
     public function cadastrar()
     {
-        return "tema/admin/cadastroUsuario.php";
+        return "cadastroUsuario.php";
     }
 
     public function autenticar(string $email,string $senha)
@@ -49,16 +49,16 @@ class Usuario
     }
 
 
-    public function inserir(string $nome, string $telefone, string $email, string $nivel_acesso, string $senha)
+    public function inserir(string $nome, string $email, string $telefone, string $endereco, string $cidade,string $estado,string $cep,string $senha)
     {
         $this->usuarioModel->nome           = $nome;        
         $this->usuarioModel->email          = $email;
-        $this->usuarioModel->senha          = md5($senha);
         $this->usuarioModel->telefone       = $telefone;
         $this->usuarioModel->endereco          = $endereco;
         $this->usuarioModel->cidade          = $cidade;
         $this->usuarioModel->estado          = $estado;
         $this->usuarioModel->cep          = $cep;
+        $this->usuarioModel->senha          = md5($senha);
        
         
         
