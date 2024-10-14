@@ -6,7 +6,7 @@ use Source\Core\Model;
 
 class CategoriaModel extends Model
 {
-    protected $table = 'categoria';
+    protected $table = 'categoria'; // Nome da tabela
 
     /**
      * Adiciona uma nova categoria.
@@ -52,16 +52,16 @@ class CategoriaModel extends Model
      * Obtém uma categoria pelo seu ID.
      * 
      * @param int $id O ID da categoria.
-     * @return array|null Os dados da categoria ou null em caso de falha.
+     * @return CategoriaModel|null Os dados da categoria ou null em caso de falha.
      */
-    public function getCategoriaById(int $id): ?array
+    public function getCategoriaById(int $id): ?CategoriaModel
     {
         $query = "SELECT * FROM {$this->table} WHERE id = :id";
         $params = "id={$id}";
         $stmt = $this->read($query, $params);
 
         if ($stmt && $stmt->rowCount() > 0) {
-            return $stmt->fetch(\PDO::FETCH_ASSOC);
+            return $stmt->fetchObject(__CLASS__);
         }
 
         $this->message = "Categoria não encontrada!";

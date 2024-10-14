@@ -1,4 +1,5 @@
 <?php
+
 namespace Source\Core;
 
 use PDO;
@@ -14,20 +15,18 @@ class Connect
     private const HOSTNAME = "localhost";
     private const USERNAME = "root";
     private const PASSWORD = "";
-    private const DBNAME = "processo_adm";
+    private const DBNAME = "fiscal_cidadao";
     //recurso de conexão com o banco
     private static $instance;
     public static $fail;
-    private function __construct()
-    {
-    }
+    private function __construct() {}
     public static function getInstance(): ?PDO
     {
         if (empty(self::$instance)) {
             try {
                 self::$instance = new PDO(
                     "mysql:host=" . self::HOSTNAME .
-                    ";dbname=" . self::DBNAME . ";",
+                        ";dbname=" . self::DBNAME . ";",
                     self::USERNAME,
                     self::PASSWORD
                 );

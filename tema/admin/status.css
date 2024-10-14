@@ -1,0 +1,119 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#sidebar {
+  width: 250px;
+  background: #292b2c;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  left: -250px; /* Oculto inicialmente */
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #343a40;
+  text-align: center;
+}
+
+.sidebar-header h3 {
+  color: #f1f1f1;
+}
+
+#sidebar ul.components {
+  padding: 0;
+  list-style: none;
+}
+
+#sidebar ul li {
+  padding: 15px;
+  text-align: left;
+}
+
+#sidebar ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#sidebar ul li a:hover {
+  background-color: #3d4144;
+  color: #fff;
+}
+
+#content {
+  width: 100%;
+  padding: 20px;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+#content nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grafico {
+  width: 100%;
+  height: 200px;
+  background-color: #ccc;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.forum .post {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.post p {
+  margin: 0;
+}
