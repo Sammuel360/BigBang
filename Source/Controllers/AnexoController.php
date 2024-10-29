@@ -4,7 +4,7 @@ namespace Source\Controlers;
 
 use Source\Models\AnexoModel;
 
-class Anexo
+class AnexoController
 {
     private $anexoModel;
 
